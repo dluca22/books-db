@@ -1,0 +1,107 @@
+[
+    {
+      "id": 1,
+      "title": "The Secret of the Golden Pyramid",
+      "author": "Jennifer Lee",
+      "category": "avventura",
+      "pages": 200
+    },
+    {
+      "id": 2,
+      "title": "The Sorcerer's Apprentice",
+      "author": "David Brown",
+      "category": "fantasy",
+      "pages": 390
+    },
+    {
+      "id": 3,
+      "title": "The Art of Living",
+      "author": "Samantha Green",
+      "category": "saggio",
+      "pages": 150
+    },
+    {
+      "id": 4,
+      "title": "Escape from the Island of Dr. Moreau",
+      "author": "Olivia Taylor",
+      "category": "avventura",
+      "pages": 250
+    },
+    {
+      "id": 5,
+      "title": "The Princess and the Dragon",
+      "author": "Michael Lee",
+      "category": "fantasy",
+      "pages": 983
+    },
+    {
+      "id": 6,
+      "title": "The Power of Positive Thinking",
+      "author": "Emily Jones",
+      "category": "saggio",
+      "pages": 180
+    },
+    {
+      "id": 7,
+      "title": "Journey to the Center of the Earth",
+      "author": "David Jones",
+      "category": "avventura",
+      "pages": 300
+    },
+    {
+      "id": 8,
+      "title": "The Sword in the Stone",
+      "author": "Emma Thompson",
+      "category": "fantasy",
+      "pages": 1350
+    },
+    {
+      "id": 9,
+      "title": "The Art of War",
+      "author": "Sophie Brown",
+      "category": "saggio",
+      "pages": 1120
+    },
+    {
+      "id": 10,
+      "title": "Treasure Island",
+      "author": "Lucas Smith",
+      "category": "avventura",
+      "pages": 280
+    },
+    {
+      "id": 11,
+      "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+      "author": "Oliver Taylor",
+      "category": "fantasy",
+      "pages": 450
+    },
+    {
+      "id": 12,
+      "title": "The 7 Habits of Highly Effective People",
+      "author": "Ava Green",
+      "category": "saggio",
+      "pages": 720
+    },
+    {
+      "id": 13,
+      "title": "Around the World in 80 Days",
+      "author": "William Brown",
+      "category": "avventura",
+      "pages": 80
+    },
+    {
+      "id": 14,
+      "title": "The Hobbit",
+      "author": "Liam Smith",
+      "category": "fantasy",
+      "pages": 1400
+    },
+    {
+      "id": 15,
+      "title": "The Power of Now",
+      "author": "Sophia Lee",
+      "category": "saggio",
+      "pages": 840
+    }
+  ]
