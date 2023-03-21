@@ -1,0 +1,12 @@
+
+@import 'src/variables';
+
+
+nav{
+    display:flex;
+    background-color: $accent;
+    h2{
+        color:whitesmoke;
+        margin: 20px;
+    }
+}
