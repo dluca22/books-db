@@ -3,6 +3,7 @@ import { Book } from '../../../interfaces/Book';
 import { BooksService } from 'src/app/services/books.service';
 
 
+
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
@@ -10,6 +11,13 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class BookListComponent {
   bookList: Book[] = []
+
+  // does not want to accept other types if not any (string | number | undefined not working)
+  query:any;
+
+  setQuery(value:string):void{
+    this.query=value;
+  }
 
   ngOnInit(): void{
     // the return is an observable, not an array

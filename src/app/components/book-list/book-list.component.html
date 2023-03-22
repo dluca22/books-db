@@ -1,6 +1,15 @@
+<div class="searchbar">
+    Cerca:
+    <input type="text" placeholder="autore, titolo, genere" [(ngModel)]="query">
+    <div>
+        <button (click)="setQuery('fantasy')">F</button>
+        <button (click)="setQuery('saggio')">S</button>
+        <button (click)="setQuery('avventura')">A</button>
+    </div>
+</div>
 <div class="list-content">
 
-    <ng-container *ngFor="let book of bookList">
+    <div *ngFor="let book of bookList | filter:query">
         <a [routerLink]="['/book/', book.id]">
             <div class="item-card {{book.category}}">
                 {{book.title.length > 20 ? book.title.slice(0,20) + "..." : book.title}}
@@ -9,5 +18,5 @@
                 </footer>
             </div>
         </a>
-    </ng-container>
+    </div>
 </div>

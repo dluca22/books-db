@@ -26,8 +26,8 @@ nav {
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
-    justify-content: space-around;
-    padding: 5px ;
+    justify-content: center;
+    height: 12%;
     h2 {
       margin: 5px;
     }
