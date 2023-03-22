@@ -1,0 +1,7 @@
+@import 'src/_variables.scss';
+
+.book-form{
+    @include component-structure;
+    align-items: start;
+
+}
