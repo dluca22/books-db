@@ -2,12 +2,34 @@
 
 nav {
   display: flex;
+  height: 10%;
+  flex-direction: row;
   background-color: $r1;
+  justify-content: space-between;
+  align-items: center;
   a {
     text-decoration: none;
   }
   h2 {
     color: whitesmoke;
     margin: 20px;
+  }
+  app-book-search {
+    margin-inline: 20px;
+    width: 100%;
+    min-width: 250px;
+    max-width: 40%;
+    line-height: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px ;
+    h2 {
+      margin: 5px;
+    }
   }
 }

@@ -1,14 +1,24 @@
 @import "src/_variables.scss";
 .book-page {
   @include component-structure;
+  justify-content: space-between;
 
   .book-details {
     border: 1px solid black;
     display: flex;
+    height: 60vh;
     flex-direction: column;
     max-width: 60%;
     .book-detail-label {
       font-weight: bolder;
+    }
+  }
+  .edit-data{
+    display: flex;
+    flex-direction: column;
+    label{
+        display: flex;
+        flex-direction: column;
     }
   }
 }
