@@ -1,6 +1,7 @@
 <div class="searchbar">
     Cerca:
     <input type="text" placeholder="autore, titolo, genere" [(ngModel)]="query">
+    <span class="clear-query" type="button" (click)="clearQuery()">x</span>
     <div>
         <button (click)="setQuery('fantasy')">F</button>
         <button (click)="setQuery('saggio')">S</button>

@@ -18,6 +18,9 @@ export class BookListComponent {
   setQuery(value:string):void{
     this.query=value;
   }
+  clearQuery(){
+    this.query= ''
+  }
 
   ngOnInit(): void{
     // the return is an observable, not an array
