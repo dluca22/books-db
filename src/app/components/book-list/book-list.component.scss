@@ -1,0 +1,46 @@
+.list-content {
+  height: 90vh;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+  }
+  .item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    padding: 3px;
+    text-align: center;
+    margin: 3px;
+    font-weight: bold;
+    footer {
+      font-weight: 200;
+      font-size: smaller;
+      background-color: rgb(226, 226, 226);
+      bottom: 0;
+      display: none;
+    }
+    &:hover {
+      footer {
+        display: block;
+      }
+    }
+  }
+  //   TODO change from border to accent bar
+  .fantasy {
+    border: 1px solid blue;
+  }
+  .avventura {
+    border: 1px solid red;
+  }
+  .saggio {
+    border: 1px solid green;
+  }
+}
