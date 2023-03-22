@@ -1,0 +1,20 @@
+@import 'src/variables';
+
+
+aside{
+    max-width: 200px;
+    height: 90vh;
+    border-right: 2px solid $r1;
+    background-color: $r3;
+    ul{
+        list-style: none;
+        padding: 0;
+        .list-item{
+            border: 1px solid blue;
+            margin: 5px 15px;
+            font-size: larger;
+            border-radius: 5px;
+            padding:2px;
+        }
+    }
+}

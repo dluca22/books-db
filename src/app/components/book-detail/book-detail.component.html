@@ -1,0 +1,12 @@
+
+<div *ngIf="book !== undefined; else notPresent">
+    <h2>{{book!.title}}</h2>
+
+</div>
+<ng-template #notPresent>
+    <h2>Il libro richiesto non è presente nel database</h2>
+    <button>
+        <a routerLink="/new">Aggiungilo</a>
+    </button>
+
+</ng-template>
