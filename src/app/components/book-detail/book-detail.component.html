@@ -1,6 +1,6 @@
-<div class="book-page">
+<div class="book-page" *ngIf="book !== undefined; else notPresent">
 
-    <div class="book-details" *ngIf="book !== undefined; else notPresent">
+    <div class="book-details">
         <h2>{{book!.title}}</h2>
         <div>
             <span class="book-detail-label">Autore:</span>
@@ -15,19 +15,33 @@
             <span>{{book.pages}}</span>
         </div>
 
-        <div>
-            <button><a href="/"></a></button>
-        </div>
+    </div>
 
+    <div class="edit-data">
+        <h2>{{book!.title}}</h2>
+        <div>
+            <span class="book-detail-label">Autore:</span>
+            <span>{{book.author}}</span>
+        </div>
+        <div>
+            <span class="book-detail-label">Categoria:</span>
+            <span>{{book.category}}</span>
+        </div>
+        <div>
+            <span class="book-detail-label">Numero pagine:</span>
+            <span>{{book.pages}}</span>
+        </div>
 
     </div>
-    <ng-template #notPresent>
-        <div class="warn-message">
-            <h2>Il libro richiesto non è presente nel database</h2>
-            <button>
-                <a routerLink="/new">Aggiungilo</a>
-            </button>
-        </div>
 
-    </ng-template>
 </div>
+
+<ng-template #notPresent>
+    <div class="warn-message">
+        <h2>Il libro richiesto non è presente nel database</h2>
+        <button>
+            <a routerLink="/new">Aggiungilo</a>
+        </button>
+    </div>
+
+</ng-template>
