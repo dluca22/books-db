@@ -1,8 +1,0 @@
-<aside>
-    <ul>
-        <li class="list-item"
-        *ngFor="let book of bookList">
-        <a [routerLink]="['book/', book.id]">{{book.title.length > 15 ? book.title.slice(0,15) + "..." : book.title}}</a>
-    </li>
-    </ul>
-</aside>

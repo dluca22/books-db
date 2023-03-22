@@ -1,0 +1,26 @@
+@import "src/_variables.scss";
+.book-page {
+  @include component-structure;
+  flex-direction: column;
+  .book-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    .book-detail-label{
+        font-weight: bolder;
+    }
+  }
+
+  .warn-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      text-decoration: underline;
+      color: orangered;
+    }
+    button {
+      margin-inline: auto;
+    }
+  }
+}

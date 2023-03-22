@@ -1,12 +1,13 @@
+@import "src/variables";
 
-@import 'src/variables';
-
-
-nav{
-    display:flex;
-    background-color: $r1;
-    h2{
-        color:whitesmoke;
-        margin: 20px;
-    }
+nav {
+  display: flex;
+  background-color: $r1;
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    color: whitesmoke;
+    margin: 20px;
+  }
 }

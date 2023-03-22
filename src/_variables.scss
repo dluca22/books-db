@@ -1,3 +1,13 @@
 $r1: #dd0031;
 $r3: #f7dbe1;
 $text: #616161;
+
+@mixin component-structure {
+  background-color: blue;
+  padding: 30px;
+  display: flex;
+  height: 85%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
