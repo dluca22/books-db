@@ -14,15 +14,9 @@ nav {
     color: whitesmoke;
     margin: 20px;
   }
-  app-book-search {
-    margin-inline: 20px;
-    width: 100%;
-    min-width: 250px;
-    max-width: 40%;
-    line-height: 1.4rem;
-  }
 }
 
+// TODO fix this and add transition ease in out to move it smoothly
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;

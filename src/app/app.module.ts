@@ -9,7 +9,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
-import { BookSearchComponent } from './components/book-search/book-search.component';
 import { NewBookComponent } from './components/new-book/new-book.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 
@@ -18,7 +17,6 @@ import { BookListComponent } from './components/book-list/book-list.component';
     AppComponent,
     NavbarComponent,
     BookDetailComponent,
-    BookSearchComponent,
     NewBookComponent,
     BookListComponent
   ],
