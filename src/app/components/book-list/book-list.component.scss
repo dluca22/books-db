@@ -1,14 +1,14 @@
 @import "src/_variables.scss";
 
 .searchbar {
-  width:60%;
+  width: 60%;
   margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  gap:20px;
-  input{
+  gap: 20px;
+  input {
     line-height: 1.4rem;
     outline: none;
     border: none;
@@ -21,14 +21,14 @@
   //   cursor: pointer;
   //   margin-left: -30px;
   // background-color: white;
-// }
-  .clear-query{
+  // }
+  .clear-query {
     color: $r1;
     cursor: pointer;
     margin-left: -35px;
     margin-bottom: -5px;
     background-color: $r3;
-    border:1px solid $r1;
+    border: 1px solid $r1;
     border-radius: 2px;
     padding: 0 3px;
   }
@@ -73,5 +73,15 @@
   }
   .saggio {
     border: 1px solid green;
+  }
+}
+.add {
+  font-size: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  a {
+    color: whitesmoke;
+    text-decoration: none;
   }
 }

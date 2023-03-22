@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="list-content">
-
+    <!-- TODO add conditional statement if list is empty like book-detail-component -->
     <div *ngFor="let book of bookList | filter:query">
         <a [routerLink]="['/book/', book.id]">
             <div class="item-card {{book.category}}">
@@ -20,4 +20,9 @@
             </div>
         </a>
     </div>
+
+
+</div>
+<div class="add">
+    <a href="/new">+</a>
 </div>
