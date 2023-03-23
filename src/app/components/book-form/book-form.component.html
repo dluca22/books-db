@@ -1,0 +1,27 @@
+
+
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="title">
+        Title:
+        <input type="text" name="title" formControlName="title" >
+    </label>
+    <label for="author">
+        Autore:
+        <input type="text" name="author" formControlName="author" >
+    </label>
+    <label for="category">
+        Categoria:
+        <select name="category" formControlName="category" >
+            <option value="fantasy" selected>Fantasy</option>
+            <option value="avventura">Avventura</option>
+            <option value="saggio">Saggio</option>
+        </select>
+    </label>
+    <label for="pages">
+        Pagine:
+        <input type="number" name="pages" formControlName="pages" >
+    </label>
+    <!-- change Invia con {{button.context}} in base a "new-book" o Update -->
+    <button type="submit" [disabled]="!bookForm.valid">Invia</button>
+</form>
