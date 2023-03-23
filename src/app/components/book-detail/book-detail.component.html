@@ -14,32 +14,10 @@
             <span class="book-detail-label">Numero pagine:</span>
             <span>{{book.pages}}</span>
         </div>
-
     </div>
 
     <div class="edit-data">
-        <label for="title">Titolo libro:
-            <input type="text" id="title" [(ngModel)]="book.title" placeholder="titolo">
-        </label>
-
-        <label for="author">Autore:
-            <input type="text" id="author" [(ngModel)]="book.author" placeholder="autore">
-        </label>
-
-        <label for="category">Categoria:
-            <select id="category" [(ngModel)]="book.category">
-                <option value="saggio">Saggio</option>
-                <option value="avventura">Avventura</option>
-                <option value="fantasy">Fantasy</option>
-
-            </select>
-        </label>
-
-        <label for="pages">Numero pagine:
-            <input type="number" id="pages" min="0" max="1500" [(ngModel)]="book.pages" placeholder="titolo">
-        </label>
-
-
+       <app-book-form [book]="book" [editMode]="true"></app-book-form>
     </div>
 
 </div>
