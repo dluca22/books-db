@@ -8,7 +8,7 @@
         <button (click)="setQuery('avventura')">A</button>
     </div>
 </div>
-<div class="list-content" *ngIf="bookList.length; else emptyList">
+<div class="grid-content" *ngIf="bookList.length; else emptyList">
     <!-- TODO add conditional statement if list is empty like book-detail-component -->
 
     <div *ngFor="let book of bookList | filter:query">

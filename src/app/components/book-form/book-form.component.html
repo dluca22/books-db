@@ -1,18 +1,15 @@
-
-
-
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
     <label for="title">
         Title:
-        <input type="text" name="title" formControlName="title" >
+        <input type="text" name="title" formControlName="title">
     </label>
     <label for="author">
         Autore:
-        <input type="text" name="author" formControlName="author" >
+        <input type="text" name="author" formControlName="author">
     </label>
     <label for="category">
         Categoria:
-        <select name="category" formControlName="category" >
+        <select name="category" formControlName="category">
             <option value="fantasy" selected>Fantasy</option>
             <option value="avventura">Avventura</option>
             <option value="saggio">Saggio</option>
@@ -20,13 +17,13 @@
     </label>
     <label for="pages">
         Pagine:
-        <input type="number" name="pages" formControlName="pages" >
+        <input type="number" name="pages" formControlName="pages">
     </label>
     <!-- change Invia con {{button.context}} in base a "new-book" o Update -->
     <button type="submit" [disabled]="!bookForm.valid">Invia</button>
 
     <!-- TODO hard refreshing from this page + submitting a form and using this go back button will cause error due to not fetching data in the book-list onInit method -->
-    <a *ngIf="submitted"  routerLink=".."><button type="button"> Indietro </button></a>
+    <a *ngIf="submitted" routerLink=".."><button type="button"> Indietro </button></a>
 
     <!--  will show up if DOM manipulated from browser console, but will also be removed if user fixes values -->
     <ng-container *ngIf="!bookForm.valid">

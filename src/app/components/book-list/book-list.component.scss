@@ -14,30 +14,22 @@
     border: none;
     border-bottom: 1px solid $r1;
   }
-  // MAYBE just the first 2 parameters look good an minimalistic enough + white background: ;
-
-  // .clear-query{
-  //   color: $r1;
-  //   cursor: pointer;
-  //   margin-left: -30px;
-  // background-color: white;
-  // }
-  .clear-query {
+  .clear-query{
     color: $r1;
     cursor: pointer;
-    margin-left: -35px;
-    margin-bottom: -5px;
-    background-color: $r3;
-    border: 1px solid $r1;
-    border-radius: 2px;
-    padding: 0 3px;
+    margin-left: -30px;
+    background-color: white;
   }
+
 }
-.list-content {
+
+
+
+.grid-content {
   @include component-structure;
   justify-content: start;
   align-items: start;
-  
+
   a {
     text-decoration: none;
   }
