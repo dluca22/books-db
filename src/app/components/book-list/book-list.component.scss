@@ -35,6 +35,9 @@
 }
 .list-content {
   @include component-structure;
+  justify-content: start;
+  align-items: start;
+  
   a {
     text-decoration: none;
   }
@@ -75,6 +78,11 @@
     border: 1px solid green;
   }
 }
+
+.warn-message{
+  @include component-structure
+}
+
 .add {
   font-size: 40px;
   position: absolute;

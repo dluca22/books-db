@@ -22,6 +22,11 @@ export class BookListComponent {
     this.query= ''
   }
 
+  deleteBook(id:number){
+    this.bookList = this.bookList.filter(book => book.id !== id)
+    this.booksService.deleteBook(id)
+  }
+
   ngOnInit(): void{
     this.booksService.getBooksList().subscribe(books => this.bookList = books)
   }

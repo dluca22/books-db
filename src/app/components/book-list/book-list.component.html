@@ -8,9 +8,11 @@
         <button (click)="setQuery('avventura')">A</button>
     </div>
 </div>
-<div class="list-content">
+<div class="list-content" *ngIf="bookList.length; else emptyList">
     <!-- TODO add conditional statement if list is empty like book-detail-component -->
+
     <div *ngFor="let book of bookList | filter:query">
+        <button (click)="deleteBook(book.id)">X</button>
         <a [routerLink]="['/book/', book.id]">
             <div class="item-card {{book.category}}">
                 {{book.title.length > 20 ? book.title.slice(0,20) + "..." : book.title}}
@@ -23,6 +25,14 @@
 
 
 </div>
+
+<ng-template #emptyList>
+<div class="warn-message">
+    <h2>VUOTO</h2>
+    <a routerLink="/new"><button>Aggiungine uno</button></a>
+</div>
+</ng-template>
+
 <div class="add">
     <a routerLink="/new">+</a>
 </div>

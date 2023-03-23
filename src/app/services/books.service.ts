@@ -41,6 +41,10 @@ export class BooksService {
     return this.bookList.find((book: Book) => book.id === id)
   }
 
+  deleteBook(id:number):void{
+    this.bookList = this.bookList.filter(book => book.id !== id)
+  }
+
   addBook(submission:newBook){
     const newbook : Book = {
       id: this.bookList.length +1,
