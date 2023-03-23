@@ -19,8 +19,12 @@
         Pagine:
         <input type="number" name="pages" formControlName="pages">
     </label>
-    <!-- change Invia con {{button.context}} in base a "new-book" o Update -->
-    <button type="submit" [disabled]="!bookForm.valid">Invia</button>
+
+
+
+    <button type="submit" [disabled]="!bookForm.valid">{{ editMode? "Modifica" : "Invia"}}</button>
+
+
 
     <!-- TODO hard refreshing from this page + submitting a form and using this go back button will cause error due to not fetching data in the book-list onInit method -->
     <a *ngIf="submitted" routerLink=".."><button type="button"> Indietro </button></a>

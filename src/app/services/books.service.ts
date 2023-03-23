@@ -46,8 +46,16 @@ export class BooksService {
       id: this.bookList.length +1,
       ...submission
     }
-
     this.bookList.push(newbook)
+  }
+
+  editBook(bookId:number, submission:Book){
+    
+    this.bookList = this.bookList.map(book => (
+      book.id === bookId ?
+       { ...submission, id: bookId}
+       : book
+    ))
   }
 
   constructor(private http: HttpClient) { }

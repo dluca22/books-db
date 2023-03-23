@@ -11,8 +11,8 @@ import { Book } from 'src/interfaces/Book';
 export class BookFormComponent implements OnInit {
 
   // this form might also be used in book/:id and be passed a book object
-  @Input() book?:Book
-  @Input() editMode?:boolean
+  @Input() book?: Book
+  @Input() editMode?: boolean
 
 
   // instance of reactive FormGroup
@@ -37,7 +37,7 @@ export class BookFormComponent implements OnInit {
 
     // but if an instance of book gets passed we can pre-fill/patch the values with data from the book object
 
-    if(this.book){
+    if (this.book) {
       this.bookForm.patchValue({
         title: this.book.title,
         author: this.book.author,
@@ -45,20 +45,26 @@ export class BookFormComponent implements OnInit {
         pages: this.book.pages,
       })
 
-  }
+    }
   }
 
   onSubmit() {
     if (this.bookForm.valid) {
-        // submits the data to the service
+      // submits the data to the service
+
+      if (this.editMode) {
+        this.bookService.editBook(this.book!.id, this.bookForm.value)
+      } else {
+        // resets the form and makes the "back" button appear
         this.bookService.addBook(this.bookForm.value);
-      // resets the form and makes the "back" button appear
-      this.submitted = true
-      this.bookForm.reset()
+        this.bookForm.reset()
+        this.submitted = true
+      }
       this.errorMessage = false
     } else {
       this.errorMessage = true
     }
+
   }
   constructor(private bookService: BooksService) { }
 }
