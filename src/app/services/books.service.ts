@@ -31,11 +31,10 @@ export class BooksService {
     return of(this.bookList)
   }
 
-  getBook(id: number): Book | undefined {
+  // observable from the previous http-branch
+  getBook(id: number): Observable<Book | undefined>{
     // calling the getBookList and using map operators
-    // FIX only retrieving this data from a local variable will break if refreshing page from inside the book/:id page
-    // was working with the previous observable
-    return this.bookList.find((book: Book) => book.id === id)
+    return this.getBooksList().pipe(map((books: Book[]) => books.find((book: Book) => book.id === id)))
   }
 
   deleteBook(id:number):void{

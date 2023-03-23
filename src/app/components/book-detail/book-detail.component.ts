@@ -19,12 +19,12 @@ export class BookDetailComponent {
     const routeParam = this.route.snapshot.paramMap
     const bookId = Number(routeParam.get('id'))
 
-    // gets the book from the bookService by id:number
-    // does not work for refreshing the page, must switch back to the observable and subscription from http-branch
-    this.book = this.booksService.getBook(bookId)
+
+    // switched back to the observable in the bookService (from http-branch)
+    this.booksService.getBook(bookId).subscribe(book => this.book = book)
   }
 
-  // ActivatedRoute allows use of route.snapsoht.paramMap
+  // ActivatedRoute allows use of route.snapshot.paramMap
   constructor(private booksService: BooksService,
     private route: ActivatedRoute){}
 }
