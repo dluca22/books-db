@@ -23,7 +23,6 @@ export class BookListComponent {
   }
 
   ngOnInit(): void{
-    // the return is an observable, not an array
     this.booksService.getBooksList().subscribe(books => this.bookList = books)
   }
 

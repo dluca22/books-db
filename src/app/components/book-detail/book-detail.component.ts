@@ -17,7 +17,7 @@ export class BookDetailComponent {
     const routeParam = this.route.snapshot.paramMap
     const bookId = Number(routeParam.get('id'))
     // this.booksService.getBook(bookId).subscribe(book => this.book = book)
-    this.booksService.getBook(bookId).subscribe(book => this.book = book)
+    this.book = this.booksService.getBook(bookId)
   }
 
   constructor(private booksService: BooksService,

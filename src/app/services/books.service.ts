@@ -9,14 +9,24 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class BooksService {
   private apiURL = "../../assets/booksDB.json"
+  private bookList: Book[] = []
 
   getBooksList(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiURL)
+    if (this.bookList.length === 0) {
+      return this.http.get<Book[]>(this.apiURL)
+        .pipe(
+          map(books => {
+            this.bookList = books
+            return books
+          })
+        )
+    }
+    return of(this.bookList)
   }
 
-  getBook(id: number): Observable<Book | undefined>{
+  getBook(id: number): Book | undefined {
     // calling the getBookList and using map operators
-    return this.getBooksList().pipe(map((books: Book[]) => books.find((book: Book) => book.id === id)))
+    return this.bookList.find((book: Book) => book.id === id)
   }
 
 
