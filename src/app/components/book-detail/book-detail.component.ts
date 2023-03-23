@@ -9,16 +9,20 @@ import { BooksService } from 'src/app/services/books.service';
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.scss']
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit {
 
   // book might be undefined if not found in database
   book?: Book;
+
+
+  setUpdates(updates:any){
+    this.book = {...updates, id:this.book!.id}
+  }
 
   ngOnInit(){
     // get the routeParam and retrieve the 'id' from it
     const routeParam = this.route.snapshot.paramMap
     const bookId = Number(routeParam.get('id'))
-
 
     // switched back to the observable in the bookService (from http-branch)
     this.booksService.getBook(bookId).subscribe(book => this.book = book)

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from 'src/app/services/books.service';
 import { Book } from 'src/interfaces/Book';
@@ -13,6 +13,7 @@ export class BookFormComponent implements OnInit {
   // this form might also be used in book/:id and be passed a book object
   @Input() book?: Book
   @Input() editMode?: boolean
+  @Output() sendUpdate = new EventEmitter();
 
 
   // instance of reactive FormGroup
@@ -36,7 +37,6 @@ export class BookFormComponent implements OnInit {
     })
 
     // but if an instance of book gets passed we can pre-fill/patch the values with data from the book object
-
     if (this.book) {
       this.bookForm.patchValue({
         title: this.book.title,
@@ -44,24 +44,28 @@ export class BookFormComponent implements OnInit {
         category: this.book.category,
         pages: this.book.pages,
       })
-
     }
   }
 
   onSubmit() {
     if (this.bookForm.valid) {
-      // submits the data to the service
-
+      // if we're in edit mode, call editBook() + update parent's value
       if (this.editMode) {
         this.bookService.editBook(this.book!.id, this.bookForm.value)
-      } else {
+        // after submitting the updates, send to parent (book-detail-component) the updated value to display in the view  (kinda like optimistic-UI updates in react router)
+        this.sendUpdate.emit(this.bookForm.value)
+      }
+      // else normal/submit mode, sends data to addBook and reset form waiting for new insertion
+      else {
         // resets the form and makes the "back" button appear
         this.bookService.addBook(this.bookForm.value);
         this.bookForm.reset()
+        // used to display "indietro" button
         this.submitted = true
       }
       this.errorMessage = false
     } else {
+      //if this bookForm is not valid (tampered HTML in devtools) sends error message and avoid any updates
       this.errorMessage = true
     }
 

@@ -1,24 +1,28 @@
 <div class="book-page" *ngIf="book !== undefined; else notPresent">
 
-    <div class="book-details">
-        <h2>{{book!.title}}</h2>
-        <div>
-            <span class="book-detail-label">Autore:</span>
-            <span>{{book.author}}</span>
+    <div class="book-details-card">
+        <div class="header">
+            <h2>{{book.title}}</h2>
         </div>
-        <div>
-            <span class="book-detail-label">Categoria:</span>
-            <span>{{book.category}}</span>
-        </div>
-        <div>
-            <span class="book-detail-label">Numero pagine:</span>
-            <span>{{book.pages}}</span>
+        <div class="card-body">
+            <div class="card-row">
+                <span class="book-detail-label">Autore:</span>
+                <span class="book-data">{{book.author}}</span>
+            </div>
+            <div class="card-row">
+                <span class="book-detail-label">Categoria:</span>
+                <span class="book-data">{{book.category}}</span>
+            </div>
+            <div class="card-row">
+                <span class="book-detail-label">Numero pagine:</span>
+                <span class="book-data">{{book.pages}}</span>
+            </div>
         </div>
     </div>
 
     <!--  TODO add event emitter to update locally with the data of the edit -->
     <div class="edit-data">
-       <app-book-form [book]="book" [editMode]="true"></app-book-form>
+       <app-book-form [book]="book" [editMode]="true" (sendUpdate)="setUpdates($event)"></app-book-form>
     </div>
 
 </div>

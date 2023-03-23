@@ -1,31 +1,62 @@
 @import "src/_variables.scss";
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .book-page {
   @include component-structure;
   justify-content: space-between;
 
-  .book-details {
-    border: 1px solid black;
-    display: flex;
+  .book-details-card {
+    // border: 1px solid black;
+    width: 50%;
     height: 60vh;
-    flex-direction: column;
+    @include flex-col;
     max-width: 60%;
-    .book-detail-label {
-      font-weight: bolder;
+    .header {
+      background-color: #e2b6cf;
+      border-radius: 2px;
+      padding-inline: 10px;
+      text-align: center;
+      h2{
+        color: #252a34;
+      }
+    }
+    
+    .card-body {
+      padding: 10px 20px;
+      @include flex-col;
+      flex: 1;
+      justify-content: space-evenly;
+      .card-row {
+        @include flex-col;
+
+        .book-detail-label {
+          font-style: italic;
+          font-weight: bolder;
+          color:#3a86ff;
+        }
+        .book-data{
+          margin-left: 20px;
+          font-size: 1.5rem;
+          text-transform: capitalize;
+        }
+      }
     }
   }
-  .edit-data{
-    display: flex;
-    flex-direction: column;
-    label{
-        display: flex;
-        flex-direction: column;
+  .edit-data {
+    @include flex-col;
+    label {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
 .warn-message {
   @include component-structure;
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   justify-content: center;
   h2 {
     text-decoration: underline;
