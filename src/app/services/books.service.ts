@@ -33,6 +33,8 @@ export class BooksService {
 
   getBook(id: number): Book | undefined {
     // calling the getBookList and using map operators
+    // FIX only retrieving this data from a local variable will break if refreshing page from inside the book/:id page
+    // was working with the previous observable
     return this.bookList.find((book: Book) => book.id === id)
   }
 

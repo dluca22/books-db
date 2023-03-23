@@ -20,6 +20,7 @@ export class BookDetailComponent {
     const bookId = Number(routeParam.get('id'))
 
     // gets the book from the bookService by id:number
+    // does not work for refreshing the page, must switch back to the observable and subscription from http-branch
     this.book = this.booksService.getBook(bookId)
   }
 
