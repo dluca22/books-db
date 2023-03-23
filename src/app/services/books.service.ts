@@ -4,14 +4,9 @@ import { Book } from 'src/interfaces/Book';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-// inteface type for new book?
-// like a Book but without an Id that will be assigned in the addBook() function
-interface newBook {
-  title: string,
-  author: string,
-  category: 'avventura' | 'saggio' | 'fantasy',
-  pages: number
-}
+// invece di ri dichiarare interface simile  Book, c'era la keyword Omit <> come da tutorial
+// riferimento anche qua: https://stackoverflow.com/questions/51063976/how-to-exclude-properties-from-interface-while-inheriting
+interface newBook extends Omit<Book, 'id'>{}
 
 
 @Injectable({
