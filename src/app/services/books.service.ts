@@ -4,9 +4,21 @@ import { Book } from 'src/interfaces/Book';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+// inteface type for new book?
+// like a Book but without an Id that will be assigned in the addBook() function
+interface newBook {
+  title: string,
+  author: string,
+  category: 'avventura' | 'saggio' | 'fantasy',
+  pages: number
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class BooksService {
   private apiURL = "../../assets/booksDB.json"
   private bookList: Book[] = []
@@ -29,6 +41,14 @@ export class BooksService {
     return this.bookList.find((book: Book) => book.id === id)
   }
 
+  addBook(submission:newBook){
+    const newbook : Book = {
+      id: this.bookList.length +1,
+      ...submission
+    }
+
+    this.bookList.push(newbook)
+  }
 
   constructor(private http: HttpClient) { }
 }

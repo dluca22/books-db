@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BooksService } from 'src/app/services/books.service';
 
 @Component({
   selector: 'app-book-form',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class BookFormComponent implements OnInit{
   bookForm!: FormGroup;
 
-  constructor(){}
+  constructor(private bookService: BooksService){}
 
   ngOnInit(): void {
     this.bookForm = new FormGroup({
@@ -21,6 +22,6 @@ export class BookFormComponent implements OnInit{
   }
 
   onSubmit(){
-    console.log(this.bookForm.value)
+    this.bookService.addBook(this.bookForm.value)
   }
 }
