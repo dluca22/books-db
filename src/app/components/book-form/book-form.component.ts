@@ -7,11 +7,18 @@ import { BooksService } from 'src/app/services/books.service';
   templateUrl: './book-form.component.html',
   styleUrls: ['./book-form.component.scss']
 })
-export class BookFormComponent implements OnInit{
+export class BookFormComponent implements OnInit {
+
+  // instance of reactive FormGroup
   bookForm!: FormGroup;
+  errorMessage: boolean = false;
+  submitted: boolean = false;
 
-  constructor(private bookService: BooksService){}
+  // onInit sets the validation for this form (kinda like in django's modelForm??)
+  // all fields required and pages have range 0-1500
 
+  // ATTENZIONE - WEAK !! dom manipulation will allow disabled button to be re-enabled
+  //
   ngOnInit(): void {
     this.bookForm = new FormGroup({
       title: new FormControl(null, Validators.required),
@@ -21,7 +28,17 @@ export class BookFormComponent implements OnInit{
     })
   }
 
-  onSubmit(){
-    this.bookService.addBook(this.bookForm.value)
+  onSubmit() {
+    if (this.bookForm.valid) {
+        // submits the data to the service
+        this.bookService.addBook(this.bookForm.value);
+      // resets the form and makes the "back" button appear
+      this.submitted = true
+      this.bookForm.reset()
+      this.errorMessage = false
+    } else {
+      this.errorMessage = true
+    }
   }
+  constructor(private bookService: BooksService) { }
 }

@@ -24,4 +24,12 @@
     </label>
     <!-- change Invia con {{button.context}} in base a "new-book" o Update -->
     <button type="submit" [disabled]="!bookForm.valid">Invia</button>
+
+    <!-- TODO hard refreshing from this page + submitting a form and using this go back button will cause error due to not fetching data in the book-list onInit method -->
+    <a *ngIf="submitted"  routerLink=".."><button type="button"> Indietro </button></a>
+
+    <!--  will show up if DOM manipulated from browser console, but will also be removed if user fixes values -->
+    <ng-container *ngIf="!bookForm.valid">
+        <ng-container *ngIf="errorMessage">--Attenzione, hai cercato di inserire una form non valida--</ng-container>
+    </ng-container>
 </form>

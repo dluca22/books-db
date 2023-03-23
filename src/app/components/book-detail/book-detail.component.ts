@@ -11,15 +11,19 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class BookDetailComponent {
 
+  // book might be undefined if not found in database
   book?: Book;
 
   ngOnInit(){
+    // get the routeParam and retrieve the 'id' from it
     const routeParam = this.route.snapshot.paramMap
     const bookId = Number(routeParam.get('id'))
-    // this.booksService.getBook(bookId).subscribe(book => this.book = book)
+
+    // gets the book from the bookService by id:number
     this.book = this.booksService.getBook(bookId)
   }
 
+  // ActivatedRoute allows use of route.snapsoht.paramMap
   constructor(private booksService: BooksService,
     private route: ActivatedRoute){}
 }
