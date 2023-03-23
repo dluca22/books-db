@@ -8,10 +8,37 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   body{
     margin:0;
     position:relative;
     width: 100vw;
     height: 100vh;
+  }
+
+
+
+body {
+  --sb-track-color: #b3acad47;
+  --sb-thumb-color: #dd0031;
+  --sb-size: 7px;
+
+  scrollbar-color: var(--sb-thumb-color)
+                   var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+
   }
