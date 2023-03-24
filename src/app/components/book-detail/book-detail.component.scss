@@ -42,23 +42,15 @@
       }
     }
   }
+
+//  .warn-message style moved in base style.scss
+
+
   .edit-data {
     @include flex-col;
     label {
       display: flex;
       flex-direction: column;
     }
-  }
-}
-.warn-message {
-  @include component-structure;
-  @include flex-col;
-  justify-content: center;
-  h2 {
-    text-decoration: underline;
-    color: orangered;
-  }
-  button {
-    margin-inline: auto;
   }
 }

@@ -23,7 +23,7 @@
     <div class="edit-data">
         <app-book-form [book]="book" [editMode]="true" (sendUpdate)="setUpdates($event)"></app-book-form>
     </div>
-<!-- TODO - fix this pagination links not forcing an update in the page
+    <!-- TODO - fix this pagination links not forcing an update in the page
     <div class="pagination">
         <a [routerLink]="['/book', book.id -1]"><button>Precedente</button></a>
         <a routerLink="/book/{{book.id +1}}"><button>Prossimo</button></a>
@@ -31,12 +31,15 @@
     </div> -->
 </div>
 
+<!-- styling for this moved to base style.scss -->
 <ng-template #notPresent>
     <div class="warn-message">
         <h2>Il libro richiesto non è presente nel database</h2>
-        <button>
-            <a routerLink="/new">Aggiungilo</a>
-        </button>
+        <a routerLink="/new" class="btn">
+            <button  >
+                Aggiungilo
+            </button>
+        </a>
     </div>
 
 </ng-template>

@@ -50,7 +50,7 @@ export class BooksService {
   }
 
   editBook(bookId:number, submission:Book){
-    
+
     this.bookList = this.bookList.map(book => (
       book.id === bookId ?
        { ...submission, id: bookId}

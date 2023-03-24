@@ -1,35 +1,81 @@
-<div class="searchbar">
-    Cerca:
-    <input type="text" placeholder="autore, titolo, genere" [(ngModel)]="query">
-    <span class="clear-query" type="button" (click)="clearQuery()">x</span>
-    <div>
-        <button (click)="setQuery('fantasy')">F</button>
-        <button (click)="setQuery('saggio')">S</button>
-        <button (click)="setQuery('avventura')">A</button>
+<div class="options">
+    <div class="filter-content">
+        <span>Cerca:</span>
+        <span class="search-input">
+            <input type="text" placeholder="autore, titolo, genere" [(ngModel)]="query">
+            <span class="clear-query" type="button" (click)="clearQuery()">x</span>
+        </span>
+        <div class="category-filters">
+            <button (click)="setQuery('fantasy')" [ngClass]="{selected: query==='fantasy'}">Fantasy</button>
+            <button (click)="setQuery('saggio')" [ngClass]="{selected: query==='saggio'}">Saggio</button>
+            <button (click)="setQuery('avventura')" [ngClass]="{selected: query==='avventura'}">Avventura</button>
+        </div>
+    </div>
+    <div class="view-toggles">
+        <button (click)="setViewStyle('grid')">G</button>
+        <button (click)="setViewStyle('list')">L</button>
     </div>
 </div>
-<div class="grid-content" *ngIf="bookList.length; else emptyList">
+<ng-container *ngIf="bookList.length; else emptyList">
 
-    <div *ngFor="let book of bookList | filter:query">
-        <button (click)="deleteBook(book.id)">X</button>
-        <a [routerLink]="['/book/', book.id]">
-            <div class="item-card {{book.category}}">
-                {{book.title.length > 20 ? book.title.slice(0,20) + "..." : book.title}}
-                <footer>
-                    {{book.author[0]}}. {{book.author.split(' ')[1]}}
-                </footer>
+    <ng-container *ngIf="viewStyle === 'grid'; else listStyle">
+
+        <div class="grid-content">
+            <div *ngFor="let book of bookList | filter:query">
+                <button (click)="deleteBook(book.id)">X</button>
+                <a [routerLink]="['/book/', book.id]">
+                    <div class="item-card {{book.category}}">
+                        {{book.title.length > 20 ? book.title.slice(0,20) + "..." : book.title}}
+                        <footer>
+                            {{book.author[0]}}. {{book.author.split(' ')[1]}}
+                        </footer>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
+        </div>
+    </ng-container>
+
+    <ng-template #listStyle>
+        <div class="list-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titolo</th>
+                        <th>Autore</th>
+                        <th>Categoria</th>
+                        <th>Pagine</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookList | filter:query" [routerLink]="['/book/', book.id]">
+
+                        <td><b>{{book.id}}</b></td>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.category}}</td>
+                        <td>{{book.pages}}</td>
+                        <td>
+                            <button (click)="deleteBook(book.id)">X</button>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </ng-template>
+</ng-container>
 
 
-</div>
-
+<!-- styling for this moved to base style.scss -->
 <ng-template #emptyList>
-<div class="warn-message">
-    <h2>VUOTO</h2>
-    <a routerLink="/new"><button>Aggiungine uno</button></a>
-</div>
+    <div class="warn-message">
+        <h2>VUOTO</h2>
+        <a routerLink="/new" class="btn"><button>Aggiungine uno</button></a>
+    </div>
 </ng-template>
 
 <div class="add">

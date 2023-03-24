@@ -12,7 +12,6 @@ import { BooksService } from 'src/app/services/books.service';
 export class BookListComponent {
   // holds the bookList received from the BookService
   bookList: Book[] = []
-
   // add a variable to enable switching between list and grid style view
   viewStyle: "list" | "grid" = "list"
 
@@ -24,13 +23,17 @@ export class BookListComponent {
   setQuery(value:string):void{
     this.query=value;
   }
-
   // clears the query on the "X" button
   clearQuery(){
     this.query= ''
   }
 
-  // button on each book component to delete from this component's view + call delete book on the BookService list
+  setViewStyle(preference: "list" | "grid"){
+    this.viewStyle = preference;
+  }
+
+
+    // button on each book component to delete from this component's view + call delete book on the BookService list
   deleteBook(id:number){
     this.bookList = this.bookList.filter(book => book.id !== id)
     this.booksService.deleteBook(id)

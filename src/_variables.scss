@@ -1,4 +1,5 @@
 $r1: #dd0031;
+$r2:#ea6d89;
 $r3: #f7dbe1;
 $text: #616161;
 
@@ -15,4 +16,8 @@ $text: #616161;
 @mixin flex-col {
   display: flex;
   flex-direction: column;
+}
+@mixin flex-row{
+  display:flex;
+  align-items: center;
 }

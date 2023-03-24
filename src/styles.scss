@@ -1,20 +1,44 @@
-
-@import './variables';
-
+@import "./variables";
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    color: $text;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $text;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.warn-message {
+  @include component-structure;
+  @include flex-col;
+  justify-content: center;
+  h2 {
+    text-decoration: underline;
+    color: #ff4500;
   }
-  body{
-    margin:0;
-    position:relative;
-    width: 100vw;
-    height: 100vh;
+      .btn {
+      padding: 10px;
+      -webkit-box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
+      box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
+      border-radius: 3px;
+      background: #ffc759;
+      button{
+        color: #1E1A1A;
+        border: none;
+        background: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+
+      }
+    }
   }
 
 
@@ -24,12 +48,11 @@ body {
   --sb-thumb-color: #dd0031;
   --sb-size: 7px;
 
-  scrollbar-color: var(--sb-thumb-color)
-                   var(--sb-track-color);
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
 }
 
 body::-webkit-scrollbar {
-  width: var(--sb-size)
+  width: var(--sb-size);
 }
 
 body::-webkit-scrollbar-track {
@@ -40,5 +63,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 10px;
-
-  }
+}
