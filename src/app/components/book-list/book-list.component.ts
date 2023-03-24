@@ -7,7 +7,7 @@ import { BooksService } from 'src/app/services/books.service';
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss']
+  styleUrls: ['./book-list.component.scss', './grid-card.scss']
 })
 export class BookListComponent {
   // holds the bookList received from the BookService

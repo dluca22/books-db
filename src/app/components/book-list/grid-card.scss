@@ -1,0 +1,91 @@
+
+@import "src/_variables.scss";
+
+
+.card {
+    font-family: Arial, Helvetica, sans-serif;
+    a{
+        text-decoration-color: white ;
+    }
+    .delete-item{
+        position: absolute;
+        top:0;
+        right:0;
+        color: rgb(255, 149, 0);
+        cursor: pointer;
+    }
+  display: inline-block;
+  width: 160px;
+  height:250px;
+  border:1px solid black;
+  //margin: 0 auto;
+  padding: 1rem 1rem 7rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+
+    &.fantasy{
+      background-color: teal;
+    }
+    &.avventura{
+      background-color:crimson;
+    }
+    &.saggio{
+      background-color:darkolivegreen;
+    }
+
+
+  &:after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    background-color: skyblue;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    filter: drop-shadow(-5px 5px 3px rgba(0,0,0,0.5));
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid #545353;
+    border-left: 40px solid #545353;
+    border-right: 40px solid white;
+    border-bottom: 40px solid white;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    filter: drop-shadow(7px -7px 5px rgba(0,0,0,0.5));
+    margin-left: 10%;
+  }
+
+  &:nth-of-type(1) {
+    margin-right: 9%;
+  }
+
+  h3 {
+    color: snow;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .author {
+    color: snow;
+    font-size: 1.1rem;
+    line-height: 140%;
+  }
+  .book-pages{
+    color:black;
+    position:absolute;
+    bottom: 3px;
+    right: 3px;
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+}
