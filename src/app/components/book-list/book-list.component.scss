@@ -48,11 +48,31 @@
       }
     }
   }
+
   .view-toggles {
     display: flex;
+    justify-content: space-evenly;
     flex-shrink: 1;
     min-width: 100px;
+    border: 1px solid $r1;
+    border-radius: 5px;
+    margin-right: 20px;
+    button{
+      width:100%;
+      border:none;
+      background: none;
+      color:$r1;
+      &:first-child{
+        border-right: 1px solid $r1;
+      }
+      &.selected{
+        background-color: $r3;
+      }
+    }
+
+
   }
+
   button {
     cursor: pointer;
   }

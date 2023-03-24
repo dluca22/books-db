@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="view-toggles">
-        <button (click)="setViewStyle('grid')">G</button>
-        <button (click)="setViewStyle('list')">L</button>
+        <button (click)="setViewStyle('grid')" [ngClass]="{selected: viewStyle === 'grid'}">Grid</button>
+        <button (click)="setViewStyle('list')" [ngClass]="{selected: viewStyle === 'list'}">List</button>
     </div>
 </div>
 <ng-container *ngIf="bookList.length; else emptyList">
