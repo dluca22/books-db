@@ -13,14 +13,25 @@
     @include flex-col;
     max-width: 480px;
     .header {
-      background-color: #e2b6cf;
       border-radius: 2px;
       padding-inline: 10px;
       text-align: center;
+      &.fantasy{
+        background-color: lighten(#7388FF, 20%);
+      }
+      &.avventura{
+        background-color: lighten(#D32F2F, 20%);
+      }
+      &.saggio{
+        background-color: lighten(#2E7D32, 20%);
+      }
       h2{
         color: #252a34;
       }
     }
+
+
+
 
     .card-body {
       padding: 10px 20px;
@@ -33,7 +44,15 @@
         .book-detail-label {
           font-style: italic;
           font-weight: bolder;
-          color:#3a86ff;
+          &.fantasy{
+            color: #7388FF;
+          }
+          &.avventura{
+            color: #D32F2F !important;
+          }
+          &.saggio{
+            color: #2E7D32;
+          }
         }
         .book-data{
           margin-left: 20px;

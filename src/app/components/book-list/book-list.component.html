@@ -22,7 +22,7 @@
 
         <div class="grid-content">
             <div *ngFor="let book of bookList | filter:query">
-                <button (click)="deleteBook(book.id)">X</button>
+                <button class='delete-item' (click)="deleteBook(book.id)">X</button>
                 <a [routerLink]="['/book/', book.id]">
                     <div class="item-card {{book.category}}">
                         {{book.title.length > 20 ? book.title.slice(0,20) + "..." : book.title}}
@@ -53,11 +53,11 @@
 
                         <td><b>{{book.id}}</b></td>
                         <td>{{book.title}}</td>
-                        <td>{{book.author}}</td>
-                        <td>{{book.category}}</td>
+                        <td><i>{{book.author}}</i></td>
+                        <td [ngClass]="[book.category]">{{book.category}}</td>
                         <td>{{book.pages}}</td>
                         <td>
-                            <button (click)="deleteBook(book.id)">X</button>
+                            <button class='delete-item' (click)="deleteBook(book.id)">X</button>
 
                         </td>
 

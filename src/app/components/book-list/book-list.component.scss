@@ -31,30 +31,29 @@
       }
     }
 
-    .category-filters{
-      button{
-        color:$r2;
+    .category-filters {
+      button {
+        color: $r2;
         background: none;
         border: none;
         padding: 1px 6px;
         border-inline: 1px solid $r1;
       }
-      button:nth-child(2){
-        border:none
+      button:nth-child(2) {
+        border: none;
       }
-      .selected{
+      .selected {
         text-decoration: underline;
         text-decoration-color: $r2;
       }
     }
-
   }
   .view-toggles {
     display: flex;
     flex-shrink: 1;
     min-width: 100px;
   }
-  button{
+  button {
     cursor: pointer;
   }
 }
@@ -72,8 +71,8 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 160px;
     border-radius: 3px;
     padding: 3px;
     text-align: center;
@@ -84,14 +83,8 @@
       font-size: smaller;
       background-color: rgb(226, 226, 226);
       bottom: 0;
-      display: none;
     }
-    &:hover {
-      // MAYBE remove hover effect?? is annoying?
-      footer {
-        display: block;
-      }
-    }
+
   }
   //   TODO change from border to accent bar
   .fantasy {
@@ -111,10 +104,10 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    thead{
+    thead {
       background-color: $r2;
-      th{
-        color:whitesmoke;
+      th {
+        color: whitesmoke;
       }
     }
   }
@@ -125,14 +118,31 @@
     text-align: left;
     padding: 8px;
   }
+  td {
+    &.fantasy {
+      color: #7388ff;
+    }
+    &.avventura {
+      color: #d32f2f !important;
+    }
+    &.saggio {
+      color: #2e7d32;
+    }
+  }
 
   tr:nth-child(even) {
-    background-color: $r3;
+    background-color: lighten($r3, 4%);
   }
 }
 
+button.delete-item {
+  border: none;
+  background: none;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  color: $r1;
+}
 //  .warn-message style moved in base style.scss
-
 
 .add {
   font-size: 40px;
@@ -142,5 +152,19 @@
   a {
     color: whitesmoke;
     text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .options {
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 12%;
+    .category-filters {
+      display: none;
+    }
+  }
+  .list-content{
+    overflow-x: auto;
   }
 }

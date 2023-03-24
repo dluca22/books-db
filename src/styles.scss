@@ -15,7 +15,6 @@ body {
   height: 100vh;
 }
 
-
 .warn-message {
   @include component-structure;
   @include flex-col;
@@ -24,26 +23,25 @@ body {
     text-decoration: underline;
     color: #ff4500;
   }
-      .btn {
-      padding: 10px;
-      -webkit-box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
-      box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
-      border-radius: 3px;
-      background: #ffc759;
-      button{
-        color: #1E1A1A;
-        border: none;
-        background: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-
-      }
+  .btn {
+    padding: 10px;
+    -webkit-box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
+    box-shadow: 16px 11px 23px -9px rgba(0, 0, 0, 0.71);
+    border-radius: 3px;
+    background: #ffc759;
+    button {
+      color: #1e1a1a;
+      border: none;
+      background: none;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
   }
+}
 
 
-
-body {
+// set this as global so it applies to every component's overflow
+* {
   --sb-track-color: #b3acad47;
   --sb-thumb-color: #dd0031;
   --sb-size: 7px;
@@ -51,16 +49,16 @@ body {
   scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: var(--sb-size);
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: var(--sb-track-color);
   border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 10px;
 }

@@ -13,7 +13,7 @@ export class BookListComponent {
   // holds the bookList received from the BookService
   bookList: Book[] = []
   // add a variable to enable switching between list and grid style view
-  viewStyle: "list" | "grid" = "list"
+  viewStyle: "list" | "grid" = "grid"
 
   // does not want to accept other types if not any (string | number | undefined not working)
   // 2-way binding value for search input, is used in filter: pipe from "Ng2SearchPipeModule"
