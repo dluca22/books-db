@@ -3,14 +3,15 @@
 
 .book-page {
   @include component-structure;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   .book-details-card {
     // border: 1px solid black;
     width: 50%;
+
     height: 60vh;
     @include flex-col;
-    max-width: 60%;
+    max-width: 480px;
     .header {
       background-color: #e2b6cf;
       border-radius: 2px;
@@ -45,12 +46,4 @@
 
 //  .warn-message style moved in base style.scss
 
-
-  .edit-data {
-    @include flex-col;
-    label {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 }

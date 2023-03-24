@@ -1,14 +1,106 @@
 @import "src/_variables.scss";
 
+// form{
+//     // border: 1px solid black;
+//     @include flex-col;
+//     align-items: end;
+//     justify-content: space-around;
+// }
+// .editMode{
+//     height: 300px;
 
-form{
-    // border: 1px solid black;
-    @include flex-col;
-    align-items: end;
-    justify-content: space-around;
+// }
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  form {
+    label {
+      font-weight: bolder;
+      color: darken($text, 20%);
+      margin-left: 5px;
+    }
+
+    input,
+    select {
+      color: $inputText;
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      font-size: 1.2rem;
+      display: inline-block;
+      border: none;
+      border-bottom: 3px solid #66666664;
+      border-radius: 4px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      box-sizing: border-box;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-weight: 200;
+        opacity: 60%;
+        font-style: italic;
+      }
+    }
+    .ng-touched.ng-valid {
+      border-bottom: 3px solid #45a049;
+    }
+    .ng-touched.ng-invalid {
+      border-bottom: 3px solid red;
+    }
+    select {
+      background-color: white;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    // submit button is gray and disabled at start
+    // turn red & disabled on form touched && invalid
+    // turn green && enabled on form valid
+    button[type="submit"] {
+      margin-left: auto;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 22px;
+
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 2px;
+      color: whitesmoke;
+      background-color: #45a049;
+      &:hover {
+        background-color: #63e669;
+      }
+      &:disabled {
+        background-color: gray;
+        opacity: 30%;
+      }
+    }
+    button[type="submit"].invalid-form {
+      background-color: red;
+    }
+  }
 }
-.editMode{
-    height: 300px;
-
+.submit{
+    display: flex;
+    margin:auto;
+    width: 70%;
+    max-width: 760px;
 }
-
+.editMode {
+    display: flex;
+    margin:auto;
+    width: 50%;
+    max-width: 800px;
+}
