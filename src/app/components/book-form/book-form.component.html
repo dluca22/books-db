@@ -1,6 +1,5 @@
-
 <div [ngClass]="editMode ? 'editMode': 'submit'">
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
         <label for="title">
             Titolo:
         </label>
@@ -12,11 +11,11 @@
         <label for="category">
             Categoria:
         </label>
-            <select name="category" formControlName="category">
-                <option value="fantasy" selected>Fantasy</option>
-                <option value="avventura">Avventura</option>
-                <option value="saggio">Saggio</option>
-            </select>
+        <select name="category" formControlName="category">
+            <option value="fantasy" selected>Fantasy</option>
+            <option value="avventura">Avventura</option>
+            <option value="saggio">Saggio</option>
+        </select>
         <label for="pages">
             Pagine:
         </label>
@@ -24,7 +23,9 @@
 
 
         <!-- button will be gray on disabled when form is not valid but also untouched, but will turn red if touched && invalid -->
-        <button type="submit" [disabled]="!bookForm.valid" [ngClass]="{'invalid-form': bookForm.touched && !bookForm.valid}">{{ editMode? "Modifica" : "Invia"}}</button>
+        <button type="submit" [disabled]="!bookForm.valid"
+            [ngClass]="{'invalid-form': bookForm.touched && !bookForm.valid}">{{ editMode? "Modifica" :
+            "Invia"}}</button>
 
 
 
@@ -33,8 +34,12 @@
 
         <!--  will show up if DOM manipulated from browser console, but will also be removed if user fixes values -->
         <ng-container *ngIf="!bookForm.valid">
-            <ng-container *ngIf="errorMessage"><div class="warn-popup">--Attenzione, hai cercato di inserire una form non valida--</div></ng-container>
+            <ng-container *ngIf="errorMessage">
+                <div class="warn-popup">
+                    <h3>Attenzione!!</h3>
+                    <p> hai cercato di inserire una form non valida</p>
+                </div>
+            </ng-container>
         </ng-container>
     </form>
 </div>
-
