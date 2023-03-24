@@ -20,11 +20,15 @@
         </div>
     </div>
 
-    <!--  TODO add event emitter to update locally with the data of the edit -->
     <div class="edit-data">
-       <app-book-form [book]="book" [editMode]="true" (sendUpdate)="setUpdates($event)"></app-book-form>
+        <app-book-form [book]="book" [editMode]="true" (sendUpdate)="setUpdates($event)"></app-book-form>
     </div>
+<!-- TODO - fix this pagination links not forcing an update in the page
+    <div class="pagination">
+        <a [routerLink]="['/book', book.id -1]"><button>Precedente</button></a>
+        <a routerLink="/book/{{book.id +1}}"><button>Prossimo</button></a>
 
+    </div> -->
 </div>
 
 <ng-template #notPresent>

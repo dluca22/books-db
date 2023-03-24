@@ -9,7 +9,6 @@
     </div>
 </div>
 <div class="grid-content" *ngIf="bookList.length; else emptyList">
-    <!-- TODO add conditional statement if list is empty like book-detail-component -->
 
     <div *ngFor="let book of bookList | filter:query">
         <button (click)="deleteBook(book.id)">X</button>

@@ -1,9 +1,5 @@
 @import "src/_variables.scss";
 
-@mixin flex-col {
-  display: flex;
-  flex-direction: column;
-}
 
 .book-page {
   @include component-structure;
@@ -24,7 +20,7 @@
         color: #252a34;
       }
     }
-    
+
     .card-body {
       padding: 10px 20px;
       @include flex-col;

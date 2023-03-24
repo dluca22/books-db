@@ -1,7 +1,14 @@
+@import "src/_variables.scss";
+
+
 form{
-    height: 300px;
-    display: flex;
+    // border: 1px solid black;
+    @include flex-col;
     align-items: end;
-    flex-direction: column;
     justify-content: space-around;
 }
+.editMode{
+    height: 300px;
+
+}
+

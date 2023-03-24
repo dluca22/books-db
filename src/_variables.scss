@@ -10,3 +10,9 @@ $text: #616161;
   align-items: center;
   flex-wrap: wrap;
 }
+
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
