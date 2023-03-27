@@ -24,7 +24,7 @@ export class BooksService {
         .pipe(
           map(books => {
             this.bookList = books
-            return books
+            return this.bookList
           })
         )
     }
