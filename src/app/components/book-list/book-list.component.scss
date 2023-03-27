@@ -80,8 +80,8 @@
 
 .grid-content {
   @include component-structure;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap:10px;
 
 }
